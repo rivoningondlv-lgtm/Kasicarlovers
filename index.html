@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kasicarlovers</title>
+        <meta charset="UTF-8">
+    </head>
+    <body style="background-color:#ffffff;text-align: center;">
+
+        <div id="welcomeScreen" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height: 100%;
+                background-image: url('images/cpmbmw.jpg'); /* Your BMW image! */
+                background-size: cover;
+                background-position: center; /* Centers the image */
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+                z-index:9999;
+                opacity: 1;
+                transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Added transform for sliding */
+                transform: translateY(0); /* Start position for sliding */
+            ">
+
+            <div style="
+            background-color: rgba(204, 0, 0, 0.85); /* Semi-transparent red */
+            color: white;
+            padding: 40px 60px; /* more padding for a nicer shape */
+            border-radius: 15px; /* Softer Rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            max-width: 90%;
+            width: 450px; /* Fixed width for a consistent shape */
+            text-align: center;
+            backdrop-filter: blur(5px); /* Optional: Blurs the background behind the block */
+            ">
+            <h2>Welcome to Kasicarlovers!</h2>
+            <p style="font-size: 1.1em;">Enjoy the ride and explore the best of SA's car scene</p>
+
+            <button onclick="closeWelcomeScreen()" style="
+                background-color: white;
+                color: #CC0000;
+                border: none;
+                padding: 15px 35px; /* Largerbutton */
+                border-radius: 8px; /* Rounder button */
+                cursor: pointer;
+                font-size: 1.2em; /* Larger text */
+                font-weight: bold;
+                margin-top: 3vh;
+                transition: background-color 0.3s ease; /* Button hover effect */
+            ">Let's Go!</button>
+        </div>
+        </div>
+                
+        <nav>
+            <ul style="list-style-type: none; padding: 0;">
+            <li style="display: inline-block; margin: 0 15px;">
+                <a href="index.html" style="text-decoration: none; color: #CC0000; font-weight: bold;">Home</a>
+            </li>
+                <li style="display: inline-block; margin: 0 15px;">
+                    <a href="reviews.html" style="text-decoration: none; color: #CC0000; font-weight: bold;">Reviews</a>
+                </li>
+                <li style="display: inline-block; margin: 0 15px;">
+                    <a href="about.html" style="text-decoration: none; color: #CC0000; font-weight: bold;">Abut Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div style="margin-top: 20px;
+        margin-bottom: 20px;">
+        <input type="text" id="carSearch"
+        placeholder="Search Car Reviews, Road Trips, Tips..." style="
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #CC0000; /* Matches your heading color */
+        border-radius: 5px;
+        font-size:1em; ">
+        <button onclick="performSearch()" style="
+        padding: 10px 15px;
+        background-color: #CC0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-left: 5px;
+        ">Search</button>
+        </div>
+        <h1 style="color: #CC0000;"> Welcome to Kasicarlovers!
+        </h1>
+        <p>This Website is dedicated to our passion for South African
+            car culture and the journey of two boys
+            following their dreams of becoming car enthusiasts.
+        </p>
+        <p>Explore our site to learn more about our adventures, car reviews,
+            and the vibrant automotive scene in South Africa.</p>
+        <p>Join us as we share our love for cars and the thrill of the road!</p>
+        <input type="text" id="carSearch"
+        placeholder="Search Car Reviews, Road Trips, Tips..." style="
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #CC0000;
+        ">
+        <h1 style="color: #CC0000;"> Welcome to Kasicarlovers!
+        </h1>
+        <p>This Website is dedicated to our passion for South African
+            car culture and the journey of two boys
+            following their dreams of becoming car enthusiasts.
+        </p>
+        <p>Explore our site to learn more about our adventures, car reviews,
+            and the vibrant automotive scene in South Africa.</p>
+        <p>Join us as we share our love for cars and the thrill of the road!</p>
+        <img src="images/mycar.jpg" alt="car image around PHB" width="650" height="600"
+        style="display:block; margin: 0 auto;">
+        <p>My favorite</p>
+        <h2>What we cover:</h2>
+        <ul>
+            <li>Car Reviews</li>
+            <li>Road Trips</li>
+            <li>Car Maintenance Tips</li>
+            <li>Interviews with Car Enthusiasts</li>
+            <li>Upcoming Car Events in South Africa</li>
+            <script>
+                function closeWelcomeScreen() {
+                    // Start the fade-out and slide-up animation
+                    document.getElementById('welcomeScreen').style.opacity = '0';
+                    document.getElementById('welcomeScreen').style.transform = 'translateY(-100%)';
+                    // After the animations are complete (0.8s, match CSS transition), hide the screen completely
+                    setTimeout(function() {
+                        document.getElementById('welcomeScreen').style.display = 'none';
+                    }, 800); // This timeout should match the CSS transition duration(0.8s = 800ms)
+                }
+                // NEW SEARCH FUNCTION STARTS HERE
+                function performSearch() {
+                    // 1. Get the text the user typed in the search box
+                    let query = document.getElementById('carSearch').value.toLowerCase();
+                    // 2. For now, we'll just show an alert with what they searched for
+
+                    if (query) {
+                        alert("Thanks for searching for: " + query + ". We're still working on this feature!" );
+                    } else {
+                        alert("Please enter a search term.");
+                    }
+                    // NEW SEARCH FUNCTION ENDS HERE
+                }
+            </script>
+        </ul>
+        <a href="about.html">Meet the Car Lovers</a>
+            <p>&copy; 2025 Kasicarlovers. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
